@@ -9,7 +9,7 @@ var level = 0;
 // Initialize high score display on document ready
 $(document).ready(function() {
     var highScore = localStorage.getItem("highScore") || 0;
-    $("#high-score").text("High Score: " + highScore);
+    $("#high-score").text("Your High Score: " + highScore);
 });
 
 // 2. Event Listeners
@@ -71,7 +71,7 @@ function startOver() {
     var highScore = localStorage.getItem("highScore") || 0;
     if (level > highScore) {
         localStorage.setItem("highScore", level);
-        $("#high-score").text("High Score: " + level);
+        $("#high-score").text("Your High Score: " + level);
     }
 
     level = 0;
