@@ -22,6 +22,15 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
+// Event listener to start the game for tochscreen
+$("h1#level-title").on("click", function() {
+    if (!gameStarted) {
+        nextSequence();
+        gameStarted = true;
+    }
+});
+
+
 // Event listener for button clicks
 $(".btn").on("click", function() {
     var userChosenColour = $(this).attr("id");
@@ -65,7 +74,7 @@ function startOver() {
     setTimeout(function() {
         $("body").removeClass("game-over");
     }, 200);
-    $("h1#level-title").text("Game Over, Press A Key to Restart");
+    $("h1#level-title").text("Game Over, Click here or press A key to Restart");
 
     // Update high score in local storage
     var highScore = localStorage.getItem("highScore") || 0;
